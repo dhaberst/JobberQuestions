@@ -1,0 +1,2 @@
+def nextVersion(version):
+    return ""
