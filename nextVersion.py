@@ -1,20 +1,21 @@
 import re
 
-'''
+def nextVersion(version):
+    '''
     This function increments a version number given a properly formatted
-     input!
+    input!
 
         Ex:
             nextVersion("1.2.3") -> "1.2.4"
             nextVersion("9.9") -> "10.0"
 
     Args:
-        version: the version number to be incremented
+        version: the version number to be incremented.
 
     Raises:
-        SystemExit: exits program
-'''
-def nextVersion(version):
+        SystemExit: exits program.
+    '''
+    
     # First we need to check for invalid parameters
     # If it is not a string, exit
     if not isinstance(version, str):
