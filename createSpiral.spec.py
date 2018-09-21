@@ -1,5 +1,5 @@
 import unittest
-from createSpiral import createSpiral
+from createSpiral import createSpiral, spiralSequence
 
 class TestCreateSpiral(unittest.TestCase):
     def testCreateSpiralFunction(self):
@@ -46,6 +46,45 @@ class TestCreateSpiral(unittest.TestCase):
             createSpiral(-1)
 
         self.assertEqual(se.exception.code, -1)
+
+
+class TestSpiralSequence(unittest.TestCase):
+    def testSpiralSequence(self):
+        '''
+        This tests the basic functionality of spiralSequence given
+        correct parameters.
+        '''
+        output = [x for x in spiralSequence(0)]
+        assert output == [0]
+
+        output = [x for x in spiralSequence(1)]
+        assert output == [1]
+
+        output = [x for x in spiralSequence(3)]
+        assert output == [3,2,2,1,1]
+
+    def testSpiralSequenceInvalidArguments(self):
+        '''
+        This tests that the function terminates correctly
+        given incorrect parameters.
+        '''
+        with self.assertRaises(SystemExit) as se:
+            [x for x in spiralSequence("a")]
+
+        self.assertEqual(se.exception.code, -1)
+
+        with self.assertRaises(SystemExit) as se:
+            [x for x in spiralSequence("1.3")]
+
+        self.assertEqual(se.exception.code, -1)
+
+        with self.assertRaises(SystemExit) as se:
+            [x for x in spiralSequence(1.3)]
+
+        self.assertEqual(se.exception.code, -1)
+
+        with self.assertRaises(SystemExit) as se:
+            [x for x in spiralSequence(-1)]
 
 if __name__ == '__main__':
     unittest.main()
