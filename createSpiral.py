@@ -1,0 +1,2 @@
+def createSpiral(N):
+    pass
