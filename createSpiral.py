@@ -24,34 +24,38 @@ def createSpiral(N):
 
     # ddd
     for s in spiralSequence(N):
-
         if currentDirection == "right":
             for i in range(s):
                 spiralMatrix[level][i + level] = count
                 count += 1
-                currentDirection = "down"
-                continue
+
+            currentDirection = "down"
+            continue
 
         elif currentDirection == "down":
-            for i in range(s): 
+            for i in range(s):
                 spiralMatrix[i + level + 1][N - level - 1] = count
                 count += 1
-                currentDirection = "left"
-                continue
+
+            level += 1
+            currentDirection = "left"
+            continue
+
         elif currentDirection == "left":
             for i in range(s):
-                spiralMatrix[N - level][i + level + 1] = count
+                spiralMatrix[N - level][N - i - level - 1] = count
                 count += 1
-                currentDirection = "up"
-                continue
+
+            currentDirection = "up"
+            continue
+
         elif currentDirection == "up":
             for i in range(s):
-                spiralMatrix[N - level - 1][i + level + 1] = count
+                spiralMatrix[N - level - i - 1][level - 1] = count
                 count += 1
-                currentDirection = "right"
-                continue
-
-        level += 1
+                
+            currentDirection = "right"
+            continue
 
     return spiralMatrix
 
@@ -63,4 +67,5 @@ def spiralSequence(N):
             yield N - count
         count += 1
 
-print(createSpiral(3))
+for x in createSpiral(6):
+    print(x)
