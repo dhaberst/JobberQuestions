@@ -3,6 +3,10 @@ from nextVersion import nextVersion
 
 class TestNextVersion(unittest.TestCase):
     def testNextVersionFunction(self):
+        '''
+        This tests the basic functionality of nextVersion given
+        correct parameters.
+        '''
         output = nextVersion("1.2.3")
         assert output == "1.2.4"
 
@@ -19,6 +23,10 @@ class TestNextVersion(unittest.TestCase):
         assert output == "10.0"
     
     def testNextVersionInvalidArguments(self):
+        '''
+        This tests that the function terminates correctly
+        given incorrect parameters.
+        '''
         with self.assertRaises(SystemExit) as se:
             nextVersion(3)
 
