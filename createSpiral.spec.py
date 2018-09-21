@@ -11,7 +11,7 @@ class TestCreateSpiral(unittest.TestCase):
         assert output == []
 
         output = createSpiral(1)
-        assert output == []
+        assert output == [[1]]
 
         output = createSpiral(3)
         assert output == [[1,2,3],[8,9,4],[7,6,5]]

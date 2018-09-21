@@ -66,6 +66,3 @@ def spiralSequence(N):
         for i in range(2):
             yield N - count
         count += 1
-
-for x in createSpiral(6):
-    print(x)
