@@ -18,7 +18,7 @@ This function takes in a version number i.e 1.2.3 and increments it. As a note, 
 nextVersion("1.2.3") == "1.2.4"
 ```
 
-### createSpiral
+### createSpiral.py
 This function creates  a matrix (2D array) where numbers 1 to N are represented as a clockwise spiral.
 ```
 createSpiral(3) == [[1,2,3],
