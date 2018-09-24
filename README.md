@@ -27,7 +27,7 @@ createSpiral(3) == [[1,2,3],
 ```
 # How I Solved?
 ### nextVersion.py
-This one was pretty straight-forward since all it is is an incrementing number with a slight twist that the first number can increase beyond 9. All that means for me is that we need to keep track of the periods since that will never change when incrementing and join the last x (x being the period count) with periods with the first number up to the period count (also making sure to include a periods in the middle of that).
+This one was pretty straight-forward since all it is is an incrementing number with a slight twist that the first number can increase beyond 9. All that means for me is that we need to keep track of the periods since that will never change when incrementing and join the last x (x being the period count) with periods with the first number up to the period count (also making sure to include a period in the middle of that).
 ### createSpiral.py
 This one is slightly more complex but stems from the idea that you need to generate a spiral sequence. For example a spiral sequence for N = 3 would be 3,2,2,1,1. That means we go 3 right, 2 down, 2 left, 1 up, 1 right. Using this idea we can create a sequence generator which is the base of our algorithm. Now that we know we go from right, down, left, up, we can cycle through those states and insert incrementing numbers according to the sequence generator. 
 # Resources
