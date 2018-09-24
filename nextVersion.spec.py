@@ -21,6 +21,9 @@ class TestNextVersion(unittest.TestCase):
 
         output = nextVersion("9.9")
         assert output == "10.0"
+
+        output = nextVersion("99.9")
+        assert output == "100.0"
     
     def testNextVersionInvalidArguments(self):
         '''
